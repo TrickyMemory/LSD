@@ -118,15 +118,16 @@
 	</div>
 	<div class="row">
 	<br><br>
+	<div class="col-lg-3"></div>
         <div class="col-lg-3">
           <img class="img-circle" width="140" height="140" alt="Generic placeholder image"
-          src="img/magicarpe.jpg"><img>
+          src="img/emeu.jpg"><img>
           <h2>Camille Chastain </h2>
           <h4>2A STI</h4>
           <h4>Rôle dans l'équipe</h4>
           <em>"Citation"</em>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3"></div>
           <img class="img-circle" width="140" height="140" alt="Generic placeholder image"
           src="img/frj.jpg"><img>
           <h2>Flavien Ronteix--Jacquet </h2>
