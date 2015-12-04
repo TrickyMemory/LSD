@@ -25,7 +25,9 @@
 	?>
           <div class="container-fluid">
             <div class="row">
-              <div class="col-lg-1"></div>
+              <div class="col-lg-1">
+                  
+                </div>
               <div class="col-lg-11">
                   <h1>Connaître les bons gestes</h1>
                   <h4><i>En cas de crise, il est important d'agir selon les bons gestes pour ne pas se mettre en danger, ou mettre en danger autrui.
@@ -37,7 +39,9 @@
               <div class="col-lg-11">
                   <h3>Généralités</h3>
                   <div class="row">
-                    <div class="col-lg-1"></div>
+                    <div class="col-lg-1">
+                        <img class="img-circle" width="90" height="90" src="img/generalite.jpg" alt="1"/>
+                      </div>
                     <div class="col-lg-11">
                       <ul>
                        <li>Gardez votre calme.</li>
@@ -51,7 +55,12 @@
                   <h3>Séismes  <small><span span id='downSeismes' class="glyphicon glyphicon-chevron-down " aria-hidden="true" onclick=';$("#downSeismes").addClass("hidden");$("#upSeismes").removeClass("hidden");$("#Seismes").removeClass("hidden");'></span><span span id='upSeismes' class="glyphicon glyphicon-chevron-up hidden" aria-hidden="true" onclick='$("#upSeismes").addClass("hidden");$("#Seismes").addClass("hidden");$("#downSeismes").removeClass("hidden");'>
 </span></small></h3>
                   <div class="row hidden" id='Seismes'>
-                    <div class="col-lg-1"></div>
+                      
+                    <div class="col-lg-1">
+                        <br><br>
+                        <img class="img-circle" width="90" height="90" src="img/seisme.png" alt="1"/>
+                      </div>
+                        
                     <div class="col-lg-11">
                       <h5><b>Les bons gestes :</b></h5>
                       <ul>
@@ -68,7 +77,10 @@
                   <h3>Crises liées à l'eau  <small><span span id='downEaux' class="glyphicon glyphicon-chevron-down " aria-hidden="true" onclick=';$("#downEaux").addClass("hidden");$("#upEaux").removeClass("hidden");$("#Eaux").removeClass("hidden");'></span><span span id='upEaux' class="glyphicon glyphicon-chevron-up hidden" aria-hidden="true" onclick='$("#upEaux").addClass("hidden");$("#Eaux").addClass("hidden");$("#downEaux").removeClass("hidden");'>
 </span></small></h3>
                   <div class="row hidden" id='Eaux'>
-                    <div class="col-lg-1"></div>
+                    <div class="col-lg-1">
+                        <br>
+                            <img class="img-circle" width="90" height="90" src="img/tsunami" alt="1"/>
+                      </div>
                     <div class="col-lg-11">
                       <h5><b>Les bons gestes :</b></h5>
                       <ul>
@@ -84,7 +96,9 @@
                   <h3>Accidents industriels  <small><span span id='downIndus' class="glyphicon glyphicon-chevron-down " aria-hidden="true" onclick=';$("#downIndus").addClass("hidden");$("#upIndus").removeClass("hidden");$("#Indus").removeClass("hidden");'></span><span span id='upIndus' class="glyphicon glyphicon-chevron-up hidden" aria-hidden="true" onclick='$("#upIndus").addClass("hidden");$("#Indus").addClass("hidden");$("#downIndus").removeClass("hidden");'>
 </span></small></h3>
                   <div class="row hidden" id='Indus'>
-                    <div class="col-lg-1"></div>
+                    <div class="col-lg-1">
+                        <br><img class="img-circle" width="90" height="90" src="img/industriel.jpg" alt="1"/>
+                      </div>
                     <div class="col-lg-11">
                       <h5><b>Les bons gestes :</b></h5>
                       <ul>
@@ -98,7 +112,9 @@
                   <h3>Vigipirates  <small><span span id='downVigip' class="glyphicon glyphicon-chevron-down " aria-hidden="true" onclick=';$("#downVigip").addClass("hidden");$("#upVigip").removeClass("hidden");$("#Vigip").removeClass("hidden");'></span><span span id='upVigip' class="glyphicon glyphicon-chevron-up hidden" aria-hidden="true" onclick='$("#upVigip").addClass("hidden");$("#Vigip").addClass("hidden");$("#downVigip").removeClass("hidden");'>
 </span></small></h3>
                   <div class="row hidden" id='Vigip'>
-                    <div class="col-lg-1"></div>
+                    <div class="col-lg-1">
+                        <br><img class="img-circle" width="90" height="90" src="img/vigipirate.png" alt="1"/>
+                      </div>
                     <div class="col-lg-11">
                       <h5><b>Les bons gestes :</b></h5>
                       <ul>
@@ -113,11 +129,11 @@
       
             <div class="col-lg-4">
               <img id='1a' src="lien"></img>
-                <a id="lia1" href =""><button id="tde" type="button" class="btn btn-default" onclick="PushToCart_1()" href="">Acheter</button></a>
+         <center><a id="lia1" href =""><button type="button" class="btn btn-default" onclick="PushToCart_1()" href="">Acheter</button></a></center>
           </div>
           <div class="col-lg-4">
                 <img id='2a' src="lien"></img>
-                <a id="lia2" href =""><button type="button" class="btn btn-default" onclick="PushToCart_2()" href="">Acheter</button></a>
+        <center><a id="lia2" href =""><button type="button" class="btn btn-default" onclick="PushToCart_2()" href="">Acheter</button></a></center>
         </div>
         <div class="col-lg_4">
                 <img id='3a' src="lien"></img>
