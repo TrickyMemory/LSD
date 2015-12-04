@@ -22,6 +22,19 @@
 <?php
   include "menu.php";
 ?>
+
+<center><h1>Rechercher un incident</h1></center>
+
+      <form action="rechercher.php" method="post">
+
+      <input type="radio" name="typeIncident" value="seisme" id="seisme" /> <label for="seisme">Seisme</label>
+      <input type="radio" name="typeIncident" value="tsunami" id="tsunami" /> <label for="tsunami">Tsunami</label>
+      <input type="radio" name="typeIncident" value="accidentIndustriel" id="accidentIndustriel"  /> <label for="Accident industriel">Accident industriel</label>
+      <input type="radio" name="typeIncident" value="vigipirate" id="vigipirate" /> <label for="vigipirate">Vigipirate</label>
+      <input type="radio" name="typeIncident" value="criseEcologique" id="criseEcologique" /> <label for="Crise écologique">Crise écologique</label>
+      <input type="radio" name="typeIncident" value="pasDeTri" id="pasDeTri" /> <label for="Pas de tri">Pas de tri</label>
+
+      <input type="submit" value="Trier">
           <table class="table">
               <thead>
                   <tr>
@@ -44,8 +57,18 @@
                   	echo $e->getMessage();
                   }
 
-                  $reponse=$bdd->prepare("SELECT nom,type,date_debut FROM Incident ORDER BY date_debut DESC LIMIT 0,10");
-                  $reponse->execute();
+                  if (isset($_POST['typeIncident']) AND $_POST['typeIncident']!='pasDeTri')
+                  {
+                      $reponse=$bdd->prepare("SELECT nom,type,date_debut FROM Incident WHERE type=:type_incident ORDER BY date_debut DESC LIMIT 0,10");
+                      $reponse->bindParam(":type_incident",$_POST['typeIncident']);
+                      $reponse->execute();
+                  }
+
+                  else
+                  {
+                    $reponse=$bdd->prepare("SELECT nom,type,date_debut FROM Incident ORDER BY date_debut DESC LIMIT 0,10");
+                    $reponse->execute();
+                  }
 
                   echo "<tbody>\n";
 
