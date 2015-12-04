@@ -79,7 +79,7 @@ var sample = {
 
 /* Code pour Recherché un produit */
 function Search_Couv(search_couverture){
-    var stock,lien;
+    var stock,lien,id_achat;
     xhr.open("POST", "https://api.cdiscount.com/OpenApi/json/Search", true);
     xhr.setRequestHeader("Content-Type","application/json; charset=UTF-8");
     xhr.send(JSON.stringify(search_couverture));
@@ -94,6 +94,9 @@ function Search_Couv(search_couverture){
                 lien=search_couverture.Products[0].MainImageUrl;
                 stock=document.getElementById('1a');
                 stock.setAttribute('src',lien);
+                console.log(search_couverture.Products[0].Id);
+                id_achat=search_couverture.Products[0].Id;
+                console.log(id_achat);
             }
 
 
@@ -102,7 +105,7 @@ function Search_Couv(search_couverture){
 }
 
 function Search_kit(search_kit_survie){
-    var stock,lien;
+    var stock,lien,id_achat;
     xhr2.open("POST", "https://api.cdiscount.com/OpenApi/json/Search", true);
     xhr2.setRequestHeader("Content-Type","application/json; charset=UTF-8");
     xhr2.send(JSON.stringify(search_kit_survie));
@@ -117,6 +120,8 @@ function Search_kit(search_kit_survie){
                 lien=search_kit_survie.Products[0].MainImageUrl;
                 stock=document.getElementById('2a');
                 stock.setAttribute('src',lien);
+                id_achat=search_kit_survie.Products[0].Id;
+                console.log(id_achat);
             }
 
 
@@ -125,7 +130,7 @@ function Search_kit(search_kit_survie){
 }
 
 function Search_Purificateur(search_purificateur){
-    var stock,lien;
+    var stock,lien,id_achat;
     xhr3.open("POST", "https://api.cdiscount.com/OpenApi/json/Search", true);
     xhr3.setRequestHeader("Content-Type","application/json; charset=UTF-8");
     xhr3.send(JSON.stringify(search_purificateur));
@@ -139,6 +144,8 @@ function Search_Purificateur(search_purificateur){
                 lien=search_purificateur.Products[3].MainImageUrl;
                 stock=document.getElementById('3a');
                 stock.setAttribute('src',lien);
+                id_achat=search_purificateur.Products[0].Id;
+                console.log(id_achat);
             }
 
 
@@ -158,6 +165,7 @@ function PushToCart_1(){
                 sample=JSON.parse(sample);
                 console.log(sample.CheckoutUrl);
                 var lien=sample.CheckoutUrl;
+                lien = "http://www.cdiscount.com/opa.aspx/?trackingid=TahYrjqjNID-PGkNCM6mNwlHxxDKDEIV0c1RtKERDkDnasOXsh1a4fmetKTV-nyU&action=product&id=IMD98711";
                 var temp=document.getElementById('lia1');
                 temp.setAttribute('href',lien);
                 console.log(temp,lien);
@@ -183,6 +191,7 @@ function PushToCart_2(){
                 sample=JSON.parse(sample);
                 console.log(sample.CheckoutUrl);
                 lien=sample.CheckoutUrl;
+                lien="http://www.cdiscount.com/opa.aspx/?trackingid=TahYrjqjNID-PGkNCM6mNwlHxxDKDEIV0c1RtKERDkDnasOXsh1a4fmetKTV-nyU&action=product&id=SIL5024763117602&offerid=18931050";
                 temp=document.getElementById("lia2");
                 temp.href=lien;
 
@@ -207,6 +216,7 @@ function PushToCart_3(){
                 sample=JSON.parse(sample);
                 console.log(sample.CheckoutUrl);
                 lien=sample.CheckoutUrl;
+                lien="http://www.cdiscount.com/opa.aspx/?trackingid=TahYrjqjNID-PGkNCM6mNwlHxxDKDEIV0c1RtKERDkDnasOXsh1a4fmetKTV-nyU&action=product&id=AUC0682384079256&offerid=56262757";
                 temp=document.getElementById("lia3");
                 temp.href=lien;
 

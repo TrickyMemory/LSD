@@ -66,78 +66,16 @@
               for (i=0;i<items.length;i++)
               {
                 var id=items.item(i).getElementsByTagName("id");
-                id=id[0].firstChild.data;
                 var long=items.item(i).getElementsByTagName("long");
-                long=long[0].firstChild.data;
                 var lat=items.item(i).getElementsByTagName("lat");
-                lat=lat[0].firstChild.data;
 
                 var marker=new google.maps.Marker({
                   position:new google.maps.LatLng(lat,long),
                   });
-                marker.setMap(map);
-                google.maps.event.addListener(marker, 'click', function(event) {
-                  latonclick=this.getPosition().lat();
-                  longonclick=this.getPosition().lng();
-                  lastmarker = marker;
-                  for (var i = 0; i < items.length; i++) {
-                    if(tabIncidents[i][1]==longonclick&&tabIncidents[i][2]==latonclick)
-                    {
-                      var xhr=null;
-                      if (window.XMLHttpRequest) {
-                          xhr = new XMLHttpRequest();
-                      }
-                      else if (window.ActiveXObject)
-                      {
-                          xhr = new ActiveXObject("Microsoft.XMLHTTP");
-                      }
-                      xhr.onreadystatechange = function() { alert_ajax_UnElem(xhr); };
-                      xhr.open("GET", "http://nuit-info.insa-cvl.fr/lsd/recupUnIncident.php?id="+tabIncidents[i][0], true);
-                      xhr.send(null);
-                    }
-                  }
-                  });
-                tabIncidents[i]=new Array();
                 tabIncidents[i][0]=id;
                 tabIncidents[i][1]=long;
                 tabIncidents[i][2]=lat;
               }
-           }
-        }
-
-        function alert_ajax_UnElem(xhr)
-        {
-          if (xhr.readyState==4)
-          {
-              var docXML= xhr.responseXML;
-              aAfficher="";
-              var items = docXML.getElementsByTagName("Incident");
-              var id = items.item(0).getElementsByTagName("id");
-                  id = id[0].firstChild.data+"<br />";
-              var datedecl = items.item(0).getElementsByTagName("datedecl");
-                  datedecl= datedecl[0].firstChild.data+"<br />";
-              var datedeb = items.item(0).getElementsByTagName("datedeb");
-                  datedeb = datedeb[0].firstChild.data+"<br />";
-              var datefin = items.item(0).getElementsByTagName("datefin");
-                  datefin = datefin[0].firstChild.data+"<br />";
-              var nom = items.item(0).getElementsByTagName("nom");
-                  nom = nom[0].firstChild.data+"<br />";
-              var descr = items.item(0).getElementsByTagName("descr");
-                  descr = descr[0].firstChild.data+"<br />";
-              var type = items.item(0).getElementsByTagName("type");
-                  type=type[0].firstChild.data+"<br />";
-              var long = items.item(0).getElementsByTagName("long");
-                  long=long[0].firstChild.data+"<br />";
-              var lat = items.item(0).getElementsByTagName("lat");
-                  lat= lat[0].firstChild.data+"<br />";
-              var nombre_vote = items.item(0).getElementsByTagName("nombre_vote");
-                  nombre_vote=nombre_vote[0].firstChild.data+"<br />";
-              var activeOuCloture = items.item(0).getElementsByTagName("activeOuCloture");
-                  activeOuCloture = activeOuCloture[0].firstChild.data+"<br />";
-              var enmaintenance = items.item(0).getElementsByTagName("enmaintenance");
-                  enmaintenance = enmaintenance[0].firstChild.data+"<br />";
-                  aAfficher=aAfficher+id+datedecl+datedeb+datefin+nom+descr+type+long+lat+nombre_vote+activeOuCloture+enmaintenance;
-              infowindow.open(map,lastmarker);
            }
         }
 
@@ -152,37 +90,58 @@
           };
           map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-          //position actuelle si la géoloc est activée (centrage possible)
-            if (navigator.geolocation)
-              var watchId = navigator.geolocation.watchPosition(successCallback,
-                                        null,
-                                        {enableHighAccuracy:true});
-            else
-              alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
-
-            function successCallback(position){
-              //la ligne du dessous recentre la map sur la position géo en continu
-              //  map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-                var marker = new google.maps.Marker({
-                  position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-                  icon:'img/pinyouhere.png',
-                  map: map
-                });
-            };
         //génération des markers incidents
           ajax();
         }
 
 
-        var aAfficher="";//event activé par clic d'un marker
+
+
+        /*
+        //event activé par clic d'un marker
         var infowindow = new google.maps.InfoWindow({
           content:aAfficher //a voir si il faut les ""
           });
         var latonclick;
         var longonclick;
-        var lastmarker;
+        google.maps.event.addListener(marker, 'click', function(event) {
+          latonclick=this.position.lat();
+          longonclick=this.position.long();
+          for (var i = 0; i < items.length; i++) {
+            if(tabIncidents[i][1]==longonclick&&tabIncidents[i][2]==latonclick)
+            {
+              var xhr=null;
+              if (window.XMLHttpRequest) {
+                  xhr = new XMLHttpRequest();
+              }
+              else if (window.ActiveXObject)
+              {
+                  xhr = new ActiveXObject("Microsoft.XMLHTTP");
+              }
 
+              xhr.open("GET", "http://http://nuit-info.insa-cvl.fr/lsd/recupUnIncident.php?id="+tabIncidents[i][0], true);
+              xhr.send(null);
 
+              var docXML= xhr.responseXML;
+              var aAfficher="";
+              var items = docXML.getElementsByTagName("Incident");
+              aAfficher+items.item(0).getElementsByTagName("id")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("datedecl")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("datedeb")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("datefin")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("nom")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("descr")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("type")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("long")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("lat")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("nombre_vote")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("activeOuCloture")+<br />;
+              aAfficher+items.item(0).getElementsByTagName("enmaintenance")+<br />;
+              infowindow.open(map,marker);
+            }
+          }
+          });
+        */
 
 
         //récup des incidents
@@ -201,7 +160,23 @@
           var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
         */
 
+        //position actuelle si la géoloc est activée (centrage possible)
+          if (navigator.geolocation)
+            var watchId = navigator.geolocation.watchPosition(successCallback,
+                                      null,
+                                      {enableHighAccuracy:true});
+          else
+            alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
 
+          function successCallback(position){
+            //la ligne du dessous recentre la map sur la position géo en continu
+            //  map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+              var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                icon:'pinyouhere.png',
+                map: map
+              });
+          };
 
 
         google.maps.event.addDomListener(window, 'load', initialize);
