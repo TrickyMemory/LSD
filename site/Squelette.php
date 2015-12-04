@@ -70,7 +70,7 @@
                 var id=items.item(i).getElementsByTagName("id");
                 var long=items.item(i).getElementsByTagName("long");
                 var lat=items.item(i).getElementsByTagName("lat");
-                alert(id);
+                console.log(id);
                 var marker=new google.maps.Marker({
                   position:new google.maps.LatLng(lat,long),
                   });
