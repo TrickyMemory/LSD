@@ -72,6 +72,7 @@
                 var marker=new google.maps.Marker({
                   position:new google.maps.LatLng(lat,long),
                   });
+                tabIncidents[i]=new Array();
                 tabIncidents[i][0]=id;
                 tabIncidents[i][1]=long;
                 tabIncidents[i][2]=lat;
