@@ -91,9 +91,27 @@
           };
           map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
+          //position actuelle si la géoloc est activée (centrage possible)
+            if (navigator.geolocation)
+              var watchId = navigator.geolocation.watchPosition(successCallback,
+                                        null,
+                                        {enableHighAccuracy:true});
+            else
+              alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
+
+            function successCallback(position){
+              //la ligne du dessous recentre la map sur la position géo en continu
+              //  map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+                var marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                  icon:'pinyouhere.png',
+                  map: map
+                });
+            };
         //génération des markers incidents
           ajax();
         }
+        google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
@@ -148,39 +166,10 @@
         //récup des incidents
 
 
-        /*
-        //init de la map
-        function initialize() {
-          var mapProp = {
-            center:new google.maps.LatLng(48.8566140,2.3522219),
-            zoom:5,
-            streetViewControl:false,
-            mapTypeId:google.maps.MapTypeId.TERRAIN
-          };
-          //génération de la map
-          var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        */
-
-        //position actuelle si la géoloc est activée (centrage possible)
-          if (navigator.geolocation)
-            var watchId = navigator.geolocation.watchPosition(successCallback,
-                                      null,
-                                      {enableHighAccuracy:true});
-          else
-            alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
-
-          function successCallback(position){
-            //la ligne du dessous recentre la map sur la position géo en continu
-            //  map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-              var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-                icon:'pinyouhere.png',
-                map: map
-              });
-          };
 
 
-        google.maps.event.addDomListener(window, 'load', initialize);
+
+
         </script>
         </head>
 
