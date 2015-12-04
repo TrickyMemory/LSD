@@ -126,7 +126,7 @@
                   </div>
                 <br>
                   <div class="row">
-      
+            <h5><b>Les produits indispensables</b></h5>
             <div class="col-lg-4">
               <img id='1a' src="lien"></img>
          <center><a id="lia1" href =""><button type="button" class="btn btn-default" onclick="PushToCart_1()" href="">Acheter</button></a></center>
