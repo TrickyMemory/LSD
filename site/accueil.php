@@ -66,13 +66,10 @@
               for (i=0;i<items.length;i++)
               {
                 var id=items.item(i).getElementsByTagName("id");
-                alert(id[0].firstChild.data);
                 id=id[0].firstChild.data;
                 var long=items.item(i).getElementsByTagName("long");
-                alert(long[0].firstChild.data);
                 long=long[0].firstChild.data;
                 var lat=items.item(i).getElementsByTagName("lat");
-                alert(lat[0].firstChild.data);
                 lat=lat[0].firstChild.data;
 
                 var marker=new google.maps.Marker({
@@ -80,8 +77,8 @@
                   });
                 marker.setMap(map);
                 google.maps.event.addListener(marker, 'click', function(event) {
-                  latonclick=this.position.lat;
-                  longonclick=this.position.long;
+                  latonclick=this.getPosition().lat();
+                  longonclick=this.getPosition().lng();
                   lastmarker = marker;
                   for (var i = 0; i < items.length; i++) {
                     if(tabIncidents[i][1]==longonclick&&tabIncidents[i][2]==latonclick)
