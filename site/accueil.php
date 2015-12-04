@@ -66,8 +66,9 @@
               for (i=0;i<items.length;i++)
               {
                 var id=items.item(i).getElementsByTagName("id");
-                alert(id.childNodes[0].nodeValue);
-                console.log(id.childNodes[0].nodeValue);
+                alert(id[0]);
+                alert(id[0].nodeValue);
+                console.log(id[0].nodeValue);
                 var long=items.item(i).getElementsByTagName("long");
                 var lat=items.item(i).getElementsByTagName("lat");
 
