@@ -68,9 +68,9 @@
               {
                 alert(i);
                 var id=items.item(i).getElementsByTagName("id");
+                console.log(id="a");
                 var long=items.item(i).getElementsByTagName("long");
                 var lat=items.item(i).getElementsByTagName("lat");
-                console.log(id);
                 var marker=new google.maps.Marker({
                   position:new google.maps.LatLng(lat,long),
                   });
