@@ -60,15 +60,17 @@
           if (xhr.readyState==4)
           {
               var docXML= xhr.responseXML;//pbl
+              alert(docXML);
               var items = docXML.getElementsByTagName("Incident");//pbl
-
+              alert(items.length);
               //on fait juste une boucle sur chaque element "donnee" trouvé
               for (i=0;i<items.length;i++)
               {
+                alert(i);
                 var id=items.item(i).getElementsByTagName("id");
                 var long=items.item(i).getElementsByTagName("long");
                 var lat=items.item(i).getElementsByTagName("lat");
-
+                alert(id);
                 var marker=new google.maps.Marker({
                   position:new google.maps.LatLng(lat,long),
                   });
@@ -85,7 +87,7 @@
           //  map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
             var marker = new google.maps.Marker({
               position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-              //icon:'pinyouhere.png',
+              icon:'img/pinyouhere.png',
               map: map
             });
           }
