@@ -65,39 +65,28 @@
           </ul>
       </div><!-- /#sidebar-wrapper -->
 
-  </div>
-  <div id="wrapper">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-5">
-          <center>
-          <img class="img-circle" width="300" height="300" alt="Generic placeholder image"
-          src="img/pika.jpg"></img>
-          </center>
-        </div>
-        <div class="col-lg-5">
-          <center>
-          <h1>ong/asso</h1>
-          <h2>Type</h2>
-          </center>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-10">
-          <center><h3>Description</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat </p>
-          <!--generer la liste des contacts disponible pour une asso-->
-          <p>contact 1 : knqks.fr</p>
-          <p>contact 2 : isn@dfskf.fr</p>
-          </center>
-        </div>
-      </div>
-    </div>
-  </div>
-    <!-- /#wrapper -->
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/sidebar_menu.js"></script>
-</body>
-</html>
+<form action="" method="post">
+
+        <center><h3>Ajouter un incident<h3></center>
+  <div class="row">
+    <div class="col-lg-3">
+	 <div class="form-group">
+ 		 <label for="usr">Nom de l'incident :</label><br />
+  		<input type="text" class="form-control" id="usr">
+	</div>
+</div>
+</div>
+	<div class="form-group">
+ 		 <label for="comment">Description :</label><br />
+  		<textarea class="form-control" rows="5" id="comment"></textarea>
+	</div>
+
+	Donnez le type d'incident qui correspond au vôtre <br />
+        <input type="radio" name="typeIncident" value="seisme" id="seisme" /> <label for="seisme">Seisme</label><br />
+        <input type="radio" name="typeIncident" value="tsunami" id="tsunami" /> <label for="tsunami">Tsunami</label><br />
+        <input type="radio" name="typeIncident" value="crise ecologique" id="crise écologique"  /> <label for="crise ecologique">Crise écologique</label><br />
+
+
+
+ <input type="text" name="dateIncident" placeholder="JJ/MM/AAAA"><br />
+ <input type="submit" value="Envoyer">
