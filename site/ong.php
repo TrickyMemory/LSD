@@ -15,55 +15,14 @@
   <link href="css/monStyle.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-default no-margin">
-              <div class="navbar-header fixed-brand">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
-                    <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
-                  </button>
-                  <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i> Les sockets diurnes</a>
-              </div><!-- navbar-header-->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                          <ul class="nav navbar-nav">
-                              <li class="active" ><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>
-                          </ul>
-                          <ul class="nav pull-right">
-                            <form class="navbar-form navbar-right">
-                              <a href="connexion.html"><button class="btn btn-primary" type="submit">Se connecter</button></a>
-                            </form>
-                            <form class="navbar-form navbar-right">
-                              <a href="inscription.html"><button class="btn btn-success" type="submit">S'inscrire</button></a>
-                            </form>
-                        </ul>
-              </div><!-- bs-example-navbar-collapse-1 -->
-  </nav>
-  <div id="wrapper">
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-          <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
-
-              <li>
-                  <a href="accueil.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Accueil</a>
-              </li>
-              <li>
-                  <a href="incidents.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>Incidents   <span class="glyphicon glyphicon-chevron-down " aria-hidden="true"></span></a>
-                  <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                      <li><a href="signalement.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>Signaler</a></li>
-                      <li><a href="rechercher.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>Rechercher</a></li>
-
-                  </ul>
-              </li>
-
-              <li  class="active">
-                  <a href="ong.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>ONGs et Associations</a>
-              </li>
-              <li>
-                  <a href="quefaire.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Que faire en cas d'urgence ?</a>
-              </li>
-              <li>
-                  <a href="moncompte.html"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>Mon Compte</a>
-              </li>
-          </ul>
-      </div><!-- /#sidebar-wrapper -->
+	<?php
+		include "top.php";
+	?>
+    </nav>
+    <div id="wrapper">
+	<?php
+		include "menu.php";
+	?>
 
   </div>
   <div id="wrapper">
