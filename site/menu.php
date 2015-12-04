@@ -17,7 +17,7 @@
 		echo '<li class="active">';
 	else
 		echo '<li>';
-	echo '<a href="incidents.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>Incidents<span class="glyphicon glyphicon-chevron-down " aria-hidden="true"></span></a>
+	echo '<a href="signalement.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>Incidents<span class="glyphicon glyphicon-chevron-down " aria-hidden="true"></span></a>
 				<ul class="nav-pills nav-stacked" style="list-style-type:none;">';
 	if($page=="signalement.php")
 		echo '<li class="active">';
@@ -51,4 +51,3 @@
 		</ul>
     </div>';
 ?>
-
