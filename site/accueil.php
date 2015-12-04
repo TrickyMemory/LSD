@@ -67,10 +67,10 @@
               {
                 var id=items.item(i).getElementsByTagName("id");
                 alert(id[0].firstChild.data);
-                console.log();(id[0].firstChild.data);
-                console.log(id[0].firstChild.innerHTML);
                 var long=items.item(i).getElementsByTagName("long");
+                alert(long[0].firstChild.data);
                 var lat=items.item(i).getElementsByTagName("lat");
+                alert(lat[0].firstChild.data);
 
                 var marker=new google.maps.Marker({
                   position:new google.maps.LatLng(lat,long),
