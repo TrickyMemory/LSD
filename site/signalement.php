@@ -64,7 +64,9 @@
               </li>
           </ul>
       </div><!-- /#sidebar-wrapper -->
-
+<?php
+	include 'dep/gmap.php';
+?>
 <form action="" method="post">
 
         <center><h3>Ajouter un incident<h3></center>
