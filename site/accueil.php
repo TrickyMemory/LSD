@@ -65,17 +65,17 @@
               //on fait juste une boucle sur chaque element "donnee" trouvé
               for (i=0;i<items.length;i++)
               {
-                var id=items.item(i).getElementsByTagName("id");
+                var id=items.item(i).getElementsByTagName("id")[0].firstChild.data;
                 alert(id[0].firstChild.data);
-                var long=items.item(i).getElementsByTagName("long");
+                var long=items.item(i).getElementsByTagName("long")[0].firstChild.data;
                 alert(long[0].firstChild.data);
-                var lat=items.item(i).getElementsByTagName("lat");
+                var lat=items.item(i).getElementsByTagName("lat")[0].firstChild.data;
                 alert(lat[0].firstChild.data);
 
                 var marker=new google.maps.Marker({
                   position:new google.maps.LatLng(lat,long),
                   });
-                   marker.setMap(map);
+                marker.setMap(map);
                 tabIncidents[i]=new Array();
                 tabIncidents[i][0]=id;
                 tabIncidents[i][1]=long;
