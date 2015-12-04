@@ -80,6 +80,16 @@
            }
         }
 
+        function successCallback(position){
+          //la ligne du dessous recentre la map sur la position géo en continu
+          //  map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+              //icon:'pinyouhere.png',
+              map: map
+            });
+          }
+
         function initialize()
         {
           //génération de la map
@@ -99,15 +109,6 @@
             else
               alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
 
-            function successCallback(position){
-              //la ligne du dessous recentre la map sur la position géo en continu
-              //  map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-                var marker = new google.maps.Marker({
-                  position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-                  icon:'pinyouhere.png',
-                  map: map
-                });
-            };
         //génération des markers incidents
           ajax();
         }
