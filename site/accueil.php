@@ -87,6 +87,30 @@
            }
         }
 
+        function alert_ajax_UnElem(xhr)
+        {
+          if (xhr.readyState==4)
+          {
+              var docXML= xhr.responseXML;
+              var aAfficher="";
+              var items = docXML.getElementsByTagName("Incident");
+              aAfficher+items.item(0).getElementsByTagName("id")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("datedecl")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("datedeb")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("datefin")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("nom")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("descr")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("type")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("long")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("lat")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("nombre_vote")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("activeOuCloture")[0].firstChild.data+"<br />";
+              aAfficher+items.item(0).getElementsByTagName("enmaintenance")[0].firstChild.data+"<br />";
+              infowindow.open(map,lastmarker);
+              }
+           }
+        }
+
         function initialize()
         {
           //génération de la map
@@ -120,18 +144,17 @@
         }
 
 
-
-
-        /*
         //event activé par clic d'un marker
         var infowindow = new google.maps.InfoWindow({
           content:aAfficher //a voir si il faut les ""
           });
         var latonclick;
         var longonclick;
+        var lastmarker;
         google.maps.event.addListener(marker, 'click', function(event) {
           latonclick=this.position.lat();
           longonclick=this.position.long();
+          lastmarker = marker;
           for (var i = 0; i < items.length; i++) {
             if(tabIncidents[i][1]==longonclick&&tabIncidents[i][2]==latonclick)
             {
@@ -143,30 +166,13 @@
               {
                   xhr = new ActiveXObject("Microsoft.XMLHTTP");
               }
-
+              xhr.onreadystatechange = function() { alert_ajax_UnElem(xhr); };
               xhr.open("GET", "http://http://nuit-info.insa-cvl.fr/lsd/recupUnIncident.php?id="+tabIncidents[i][0], true);
               xhr.send(null);
-
-              var docXML= xhr.responseXML;
-              var aAfficher="";
-              var items = docXML.getElementsByTagName("Incident");
-              aAfficher+items.item(0).getElementsByTagName("id")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("datedecl")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("datedeb")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("datefin")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("nom")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("descr")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("type")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("long")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("lat")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("nombre_vote")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("activeOuCloture")+<br />;
-              aAfficher+items.item(0).getElementsByTagName("enmaintenance")+<br />;
-              infowindow.open(map,marker);
             }
           }
           });
-        */
+
 
 
         //récup des incidents
