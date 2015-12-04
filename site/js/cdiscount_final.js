@@ -29,18 +29,19 @@ var search_couverture = {
 var search_kit_survie = {
   "ApiKey": "c1967033-bf6d-4610-93e1-2e3891be449f",
   "SearchRequest": {
-    "Keyword": "kit premier soin",
+    "Keyword": "couverture survie",
     "SortBy": "rating",
     "Pagination": {
-      "ItemsPerPage": 1
+      "ItemsPerPage": 4,
+      "PageNumber": 1
     },
     "Filters": {
       "Price": {
-        "Min": 1,
-        "Max": 50
+        "Min": 0,
+        "Max": 0
       },
-      "Navigation": "sport",
-      "IncludeMarketPlace": false
+      "Navigation": "all",
+      "IncludeMarketPlace": true
     }
   }
 }
@@ -48,18 +49,19 @@ var search_kit_survie = {
 var search_purificateur = {
   "ApiKey": "c1967033-bf6d-4610-93e1-2e3891be449f",
   "SearchRequest": {
-    "Keyword": "purificateur",
+    "Keyword": "purificateur d eau",
     "SortBy": "rating",
     "Pagination": {
-      "ItemsPerPage": 1
+      "ItemsPerPage": 4,
+      "PageNumber": 1
     },
     "Filters": {
       "Price": {
-        "Min": 1,
-        "Max": 50
+        "Min": 0,
+        "Max": 0
       },
       "Navigation": "all",
-      "IncludeMarketPlace": false
+      "IncludeMarketPlace": true
     }
   }
 }
@@ -111,6 +113,7 @@ function Search_kit(search_kit_survie){
                 search_kit_survie=xhr2.responseText
                 search_kit_survie=JSON.parse(search_kit_survie);
                 console.log(search_kit_survie.Products[0].MainImageUrl);
+
                 lien=search_kit_survie.Products[0].MainImageUrl;
                 stock=document.getElementById('2a');
                 stock.setAttribute('src',lien);
@@ -133,7 +136,7 @@ function Search_Purificateur(search_purificateur){
                 search_purificateur=xhr3.responseText
                 search_purificateur=JSON.parse(search_purificateur);
                 console.log(search_purificateur.Products[0].MainImageUrl);
-                lien=search_purificateur.Products[0].MainImageUrl;
+                lien=search_purificateur.Products[3].MainImageUrl;
                 stock=document.getElementById('3a');
                 stock.setAttribute('src',lien);
             }
