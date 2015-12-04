@@ -112,7 +112,9 @@
               var docXML= xhr.responseXML;
               aAfficher="";
               var items = docXML.getElementsByTagName("Incident");
-              aAfficher+items.item(0).getElementsByTagName("id")[0].firstChild.data+"<br />";
+              var id = items.item(0).getElementsByTagName("id");
+              alert(id[0].firstChild.data);
+              console.log(id[0].firstChild.data);
               aAfficher+items.item(0).getElementsByTagName("datedecl")[0].firstChild.data+"<br />";
               aAfficher+items.item(0).getElementsByTagName("datedeb")[0].firstChild.data+"<br />";
               aAfficher+items.item(0).getElementsByTagName("datefin")[0].firstChild.data+"<br />";
