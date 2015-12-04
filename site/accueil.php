@@ -79,6 +79,27 @@
                   position:new google.maps.LatLng(lat,long),
                   });
                 marker.setMap(map);
+                google.maps.event.addListener(marker, 'click', function(event) {
+                  latonclick=this.position.lat();
+                  longonclick=this.position.long();
+                  lastmarker = marker;
+                  for (var i = 0; i < items.length; i++) {
+                    if(tabIncidents[i][1]==longonclick&&tabIncidents[i][2]==latonclick)
+                    {
+                      var xhr=null;
+                      if (window.XMLHttpRequest) {
+                          xhr = new XMLHttpRequest();
+                      }
+                      else if (window.ActiveXObject)
+                      {
+                          xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                      }
+                      xhr.onreadystatechange = function() { alert_ajax_UnElem(xhr); };
+                      xhr.open("GET", "http://http://nuit-info.insa-cvl.fr/lsd/recupUnIncident.php?id="+tabIncidents[i][0], true);
+                      xhr.send(null);
+                    }
+                  }
+                  });
                 tabIncidents[i]=new Array();
                 tabIncidents[i][0]=id;
                 tabIncidents[i][1]=long;
@@ -150,27 +171,7 @@
         var latonclick;
         var longonclick;
         var lastmarker;
-        google.maps.event.addListener(marker, 'click', function(event) {
-          latonclick=this.position.lat();
-          longonclick=this.position.long();
-          lastmarker = marker;
-          for (var i = 0; i < items.length; i++) {
-            if(tabIncidents[i][1]==longonclick&&tabIncidents[i][2]==latonclick)
-            {
-              var xhr=null;
-              if (window.XMLHttpRequest) {
-                  xhr = new XMLHttpRequest();
-              }
-              else if (window.ActiveXObject)
-              {
-                  xhr = new ActiveXObject("Microsoft.XMLHTTP");
-              }
-              xhr.onreadystatechange = function() { alert_ajax_UnElem(xhr); };
-              xhr.open("GET", "http://http://nuit-info.insa-cvl.fr/lsd/recupUnIncident.php?id="+tabIncidents[i][0], true);
-              xhr.send(null);
-            }
-          }
-          });
+
 
 
 
