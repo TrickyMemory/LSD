@@ -80,8 +80,8 @@
                   });
                 marker.setMap(map);
                 google.maps.event.addListener(marker, 'click', function(event) {
-                  latonclick=this.position.lat();
-                  longonclick=this.position.long();
+                  latonclick=this.position.lat;
+                  longonclick=this.position.long;
                   lastmarker = marker;
                   for (var i = 0; i < items.length; i++) {
                     if(tabIncidents[i][1]==longonclick&&tabIncidents[i][2]==latonclick)
@@ -95,7 +95,7 @@
                           xhr = new ActiveXObject("Microsoft.XMLHTTP");
                       }
                       xhr.onreadystatechange = function() { alert_ajax_UnElem(xhr); };
-                      xhr.open("GET", "http://http://nuit-info.insa-cvl.fr/lsd/recupUnIncident.php?id="+tabIncidents[i][0], true);
+                      xhr.open("GET", "http://nuit-info.insa-cvl.fr/lsd/recupUnIncident.php?id="+tabIncidents[i][0], true);
                       xhr.send(null);
                     }
                   }
