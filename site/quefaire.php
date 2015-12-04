@@ -108,7 +108,28 @@
                       </ul>
                     </div>
                   </div>
-
+                <br>
+                  <div class="row">
+      
+            <div class="col-lg-4">
+              <img id='1a' src="lien"></img>
+                <a id="lia1" href =""><button id="tde" type="button" class="btn btn-default" onclick="PushToCart_1()" href="">Acheter</button></a>
+          </div>
+          <div class="col-lg-4">
+                <img id='2a' src="lien"></img>
+                <a id="lia2" href =""><button type="button" class="btn btn-default" onclick="PushToCart_2()" href="">Acheter</button></a>
+        </div>
+        <div class="col-lg_4">
+                <img id='3a' src="lien"></img>
+        <center> <a id="lia3" href=""><button type="button" class="btn btn-default" onclick="PushToCart_3()" href="">Acheter</button></a></center>
+      </div>
+        
+          
+       
+      </div>
+                  
+                  
+                  
                   <br>
               </div>
             </div>
@@ -119,5 +140,6 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sidebar_menu.js"></script>
+    <script src="js/cdiscount_final.js"></script>
 </body>
 </html>
