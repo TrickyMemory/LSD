@@ -18,7 +18,6 @@
 	<?php
 		include "top.php";
 	?>
-    </nav>
     <div id="wrapper">
 	<?php
 		include "menu.php";
