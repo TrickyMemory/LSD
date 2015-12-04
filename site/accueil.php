@@ -107,7 +107,6 @@
               aAfficher+items.item(0).getElementsByTagName("activeOuCloture")[0].firstChild.data+"<br />";
               aAfficher+items.item(0).getElementsByTagName("enmaintenance")[0].firstChild.data+"<br />";
               infowindow.open(map,lastmarker);
-              }
            }
         }
 
