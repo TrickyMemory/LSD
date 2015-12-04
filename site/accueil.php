@@ -92,7 +92,7 @@
           if (xhr.readyState==4)
           {
               var docXML= xhr.responseXML;
-              var aAfficher="";
+              aAfficher="";
               var items = docXML.getElementsByTagName("Incident");
               aAfficher+items.item(0).getElementsByTagName("id")[0].firstChild.data+"<br />";
               aAfficher+items.item(0).getElementsByTagName("datedecl")[0].firstChild.data+"<br />";
@@ -143,7 +143,7 @@
         }
 
 
-        //event activé par clic d'un marker
+        var aAfficher="";//event activé par clic d'un marker
         var infowindow = new google.maps.InfoWindow({
           content:aAfficher //a voir si il faut les ""
           });
