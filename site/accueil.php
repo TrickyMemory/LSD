@@ -95,7 +95,7 @@
                           xhr = new ActiveXObject("Microsoft.XMLHTTP");
                       }
                       xhr.onreadystatechange = function() { alert_ajax_UnElem(xhr); };
-                      xhr.open("GET", "http://http://nuit-info.insa-cvl.fr/lsd/recupUnIncident.php?id="+tabIncidents[i][0], true);
+                      xhr.open("GET", "http://nuit-info.insa-cvl.fr/lsd/recupUnIncident.php?id="+tabIncidents[i][0], true);
                       xhr.send(null);
                     }
                   }
