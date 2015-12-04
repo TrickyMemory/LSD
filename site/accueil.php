@@ -115,7 +115,7 @@
               var id = items.item(0).getElementsByTagName("id");
                   id = id[0].firstChild.data+"<br />";
               var datedecl = items.item(0).getElementsByTagName("datedecl");
-                  datedecl=[0].firstChild.data+"<br />";
+                  datedecl= datedecl[0].firstChild.data+"<br />";
               var datedeb = items.item(0).getElementsByTagName("datedeb");
                   datedeb = datedeb[0].firstChild.data+"<br />";
               var datefin = items.item(0).getElementsByTagName("datefin");
@@ -127,13 +127,13 @@
               var type = items.item(0).getElementsByTagName("type");
                   type=type[0].firstChild.data+"<br />";
               var long = items.item(0).getElementsByTagName("long");
-                  long=[0].firstChild.data+"<br />";
+                  long=long[0].firstChild.data+"<br />";
               var lat = items.item(0).getElementsByTagName("lat");
                   lat= lat[0].firstChild.data+"<br />";
               var nombre_vote = items.item(0).getElementsByTagName("nombre_vote");
                   nombre_vote=nombre_vote[0].firstChild.data+"<br />";
               var activeOuCloture = items.item(0).getElementsByTagName("activeOuCloture");
-                  activeOuCloture = [0].firstChild.data+"<br />";
+                  activeOuCloture = activeOuCloture[0].firstChild.data+"<br />";
               var enmaintenance = items.item(0).getElementsByTagName("enmaintenance");
                   enmaintenance = enmaintenance[0].firstChild.data+"<br />";
                   aAfficher=aAfficher+id+datedecl+datedeb+datefin+nom+descr+type+long+lat+nombre_vote+activeOuCloture+enmaintenance;
